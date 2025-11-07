@@ -6,3 +6,16 @@
     background-image: url(https://img.freepik.com/vektor-gratis/ikon-terpencil-perpustakaan-buku-teks_24877-83372.jpg?semt=ais_hybrid&w=740&q=80);
     background-size: cover;
 }
+
+.main-header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.output{
+    display:none;
+     color:red; 
+     margin-top:5px;
+}

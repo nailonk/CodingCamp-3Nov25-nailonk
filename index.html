@@ -10,15 +10,78 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+   <div class="container-fluid"></div>
     <header class="main-header">
         <div class="logo" ></div>
-    <nav class="flex">
-        <a class="border rounded p-2" href="">Home</a>
-        <a class="border rounded p-2" href="">Pelajaran</a>
-        <a class="border rounded p-2" href="">Home</a>
+        <h1 class="text-left font-semibold ml-2">Study Planner</h1>
+    <nav class="flex"> 
+        <a class="border rounded bg-blue-600 text-white p-2" href="#greeting">Beranda</a>
+        <a class="border rounded bg-blue-600 text-white p-2" href="#form">Pelajaran</a>
+        <a class="border rounded bg-blue-600 text-white p-2" href="">Tentang</a>
     </nav>
 </header>
-    <main></main>
+<hr/>
+<br/>
+    <main>
+        <section class="content">
+            <!-- welcome -->
+          <div class="rounded-xl shadow-lg bg-blue-600 text-white p-5" id="greeting">
+          <div class="flex justify-between items-center mb-2">
+            <h3 class="text-xl font-semibold" id="welcome-speech"></h3>
+            <h3 class="text-xl font-semibold" id="clock"></h3>
+          </div>
+            <p class="text-sm">Yuk mulai sesi belajar hari ini dengan semangat dan fokus</p>
+          </div>
+
+          <!-- form -->
+           <div class=" mx-auto px-4">
+          <form id="form" class=" bg-white shadow-md rounded-xl p-6 border border-gray-200">
+           <div class="space-y-12">
+          <div class="border-b border-gray-900/10 pb-12 dark:border-white/10">
+            <h2 class="text-base/7 font-semibold text-gray-900 dark:text-white">Sesi Belajar</h2>
+            <p class="mt-1 text-sm/6 text-gray-600 dark:text-gray-400">Siap belajar dan berkembang hari ini?</p>
+
+          <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+          <div class="sm:col-span-4">
+            <label for="mapel" class="block text-sm/6 font-medium text-gray-900 dark:text-white">Mata Pelajaran</label>
+          <div class="mt-2">
+            <div class="flex items-center rounded-md bg-white pl-3 outline-1 -outline-offset-1 outline-gray-300 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600 dark:bg-white/5 dark:outline-white/10 dark:focus-within:outline-indigo-500">
+                <input id="mapel" type="text" name="mapel" placeholder="Contoh : Matematika, Fisika, Kimia... " class="block min-w-0 grow bg-white py-1.5 pr-3 pl-1 text-base text-gray-900 placeholder:text-gray-400 focus:outline-none sm:text-sm/6 dark:bg-transparent dark:text-white dark:placeholder:text-gray-500" />
+            </div>
+          </div>
+          <div class="flex gap-4">
+          <div class="w-1/2">
+          <label for="jam" class="block text-sm/6 font-medium text-gray-900 dark:text-white">Jam</label>
+          <div class="mt-2">
+            <input id="jam" type="number" name="jam" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6 dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-indigo-500" />
+          </div>
+          </div>
+
+          <div class="w-1/2">
+            <label for="menit" class="block text-sm/6 font-medium text-gray-900 dark:text-white">Menit</label>
+            <div class="mt-2">
+              <input id="menit" type="number" name="menit" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6 dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-indigo-500" />
+            </div>
+          </div>
+          </div>
+
+        <div class="col-span-full">
+          <label for="catatan" class="block text-sm/6 font-medium text-gray-900 dark:text-white">Catatan</label>
+          <div class="mt-2">
+            <textarea id="catatan" name="catatan" rows="3" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6 dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-indigo-500"></textarea>
+          </div>
+          </div>
+          <div id="output"></div>
+
+          <br/>
+           <button type="submit" class="rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-blue-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bg-blue-6000">Mulai</button>
+ 
+        </form>
+        
+        </div>
+        </div>
+        </section>
+      </main>
     <footer></footer>
 
     <!-- js eksternal -->
