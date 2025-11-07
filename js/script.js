@@ -1,14 +1,16 @@
 document.addEventListener("DOMContentLoaded", function() {
-greeting();
 
-function greeting(){
-    let name = prompt("Masukkan Nama Anda");
-    if(!name || name.trim() === ""){
-        name = "";
+    let name = localStorage.getItem("userName");
+
+    if (!name) {
+        name = prompt("Masukkan Nama Anda");
+        if (!name || name.trim() === "") {
+            name = "";
+        }
+        localStorage.setItem("userName", name); 
     }
-    document.getElementById('welcome-speech').innerHTML = 'Selamat Datang' + name + '!';
-} });
-
+    document.getElementById('welcome-speech').textContent = 'Selamat Datang, ' + name + '!';
+});
 
 
 function updateClock() {
