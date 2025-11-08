@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documen</title>
+    <title>Study Planner</title>
      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <!-- css eksternal -->
@@ -11,13 +11,15 @@
 </head>
 <body>
    <div class="container-fluid"></div>
-    <header class="main-header">
-        <div class="logo" ></div>
-        <h1 class="text-left font-semibold ml-2">Study Planner</h1>
-    <nav class="flex"> 
+    <header class="main-header flex items-center justify-between p-4 bg-white shadow">
+    <div class="flex items-center gap-2">
+    <div class="logo w-10 h-10 bg-gray-300 rounded-full"></div>
+    <h1 class="text-3xl font-semibold">Study Planner</h1>
+  </div>
+    <nav class="flex "> 
         <a class="border rounded bg-blue-600 text-white p-2" href="#greeting">Beranda</a>
         <a class="border rounded bg-blue-600 text-white p-2" href="#form">Pelajaran</a>
-        <a class="border rounded bg-blue-600 text-white p-2" href="">Tentang</a>
+        <a class="border rounded bg-blue-600 text-white p-2" href="#tentang">Tentang</a>
     </nav>
 </header>
 <hr/>
@@ -34,7 +36,7 @@
           </div>
 
           <!-- form -->
-           <div class=" mx-auto px-4">
+          
           <form id="form" class=" bg-white shadow-md rounded-xl p-6 border border-gray-200">
            <div class="space-y-12">
           <div class="border-b border-gray-900/10 pb-12 dark:border-white/10">
@@ -42,7 +44,7 @@
             <p class="mt-1 text-sm/6 text-gray-600 dark:text-gray-400">Siap belajar dan berkembang hari ini?</p>
 
           <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-          <div class="sm:col-span-4">
+          <div class="sm:col-span-6">
             <label for="mapel" class="block text-sm/6 font-medium text-gray-900 dark:text-white">Mata Pelajaran</label>
           <div class="mt-2">
             <div class="flex items-center rounded-md bg-white pl-3 outline-1 -outline-offset-1 outline-gray-300 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-600 dark:bg-white/5 dark:outline-white/10 dark:focus-within:outline-indigo-500">
@@ -53,22 +55,15 @@
           <div class="w-1/2">
           <label for="jam" class="block text-sm/6 font-medium text-gray-900 dark:text-white">Jam</label>
           <div class="mt-2">
-            <input id="jam" type="number" name="jam" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6 dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-indigo-500" />
+            <input id="jam" type="number" name="jam" value="0" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6 dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-indigo-500" />
           </div>
           </div>
 
           <div class="w-1/2">
             <label for="menit" class="block text-sm/6 font-medium text-gray-900 dark:text-white">Menit</label>
             <div class="mt-2">
-              <input id="menit" type="number" name="menit" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6 dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-indigo-500" />
+              <input id="menit" type="number" name="menit" value="5" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6 dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-indigo-500" />
             </div>
-          </div>
-          </div>
-
-        <div class="col-span-full">
-          <label for="catatan" class="block text-sm/6 font-medium text-gray-900 dark:text-white">Catatan</label>
-          <div class="mt-2">
-            <textarea id="catatan" name="catatan" rows="3" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6 dark:bg-white/5 dark:text-white dark:outline-white/10 dark:placeholder:text-gray-500 dark:focus:outline-indigo-500"></textarea>
           </div>
           </div>
           <div id="output"></div>
@@ -77,12 +72,53 @@
            <button type="submit" class="rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-xs hover:bg-blue-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-bg-blue-6000">Mulai</button>
  
         </form>
+      </div>
+        </div>
+      </br>
+     <section id="Section" class="hidden max-w-md mx-auto mt-10 bg-white p-6 rounded-2xl shadow-lg border border-gray-200">
+      <div id="sessionContent" class="bg-white shadow-md rounded-xl p-6 border border-gray-200">
+        <h2 class="text-center text-lg font-semibold text-gray-700 mb-4">Sesi Belajar Aktif</h2>
+        <div class="text-center mb-2 text-sm text-gray-500">Mata Pelajaran</div>
+        <div class="text-center text-2xl font-semibold text-gray-800 mb-6" id="mapelAktif"></div>
+
+        <div id="studyTimer" class="text-center text-6xl font-bold text-gray-900 mb-4"></div>
+        <div class="w-full bg-gray-200 rounded-full h-2.5 mb-2">
+          <div id="progressBar" class="bg-indigo-500 h-2.5 rounded-full transition-all duration-500" style="width: 0%;"></div>
+        </div>
+        <p id="progressText" class="text-center text-gray-500 text-sm mb-6">0% Selesai</p>
+
+        <div class="flex justify-center gap-3">
+          <button id="resetBtn" class="px-5 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-xl border">Batalkan Sesi</button>
+          <button id="finishBtn" class="px-5 py-2 bg-green-600 hover:bg-green-700 text-white rounded-xl">Selesai</button>
+        </div>
+      </div>
+      </section>
+      </div>
+      </section>
         
-        </div>
-        </div>
-        </section>
+      <div id="tentang" class="bg-white shadow-md rounded-xl p-6 border border-gray-200">
+              <div class="flex justify-between items-center mb-2">
+            <div class="space-y-4 text-gray-600 leading-relaxed">
+        <p>
+          <h1 class="text-xl font-semibold">Tentang</h1>
+          <strong>Study Planner</strong> adalah aplikasi web yang dirancang khusus untuk membantu pelajar dan mahasiswa 
+          mengelola waktu belajar mereka dengan lebih efektif. Dengan fitur timer yang dapat disesuaikan 
+          dan sistem pelacakan sesi belajar, kamu dapat fokus pada pembelajaran dan meningkatkan produktivitas.
+        </p>
+        <p>
+          Aplikasi ini menggunakan konsep <em>time-boxing</em> untuk membantu kamu membagi waktu belajar menjadi 
+          sesi-sesi yang terstruktur, sehingga belajar menjadi lebih terarah dan efisien.
+        </p>
+      </div>
+
+
       </main>
-    <footer></footer>
+      <footer class="bg-gray-800 text-white py-4 text-center">
+      <p class="text-sm">
+        &copy; 2025 Study Planner. All rights reserved.
+      </p>
+      </footer>
+
 
     <!-- js eksternal -->
     <script src="js/script.js"></script>
