@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const jamInput = document.getElementById("jam");
   const menitInput = document.getElementById("menit");
   const output = document.getElementById("output");
-  const section = document.getElementById("Section");
+  const section = document.getElementById("section");
 
   [jamInput, menitInput].forEach((input) => {
     input.addEventListener("input", () => {
@@ -49,7 +49,8 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-     sessionSection.classList.remove("hidden");
+    output.classList.add("hidden");
+    section.classList.remove("hidden");
     startSesiBelajar(mapel, jam, menit);
   });
 });
@@ -98,7 +99,7 @@ finishBtn.addEventListener("click", () => {
 
  
   setTimeout(() => {
-    document.getElementById("Section").classList.add("hidden"); 
+    document.getElementById("section").classList.add("hidden"); 
     document.getElementById("form").classList.remove("hidden"); 
     alert("Sesi belajar selesai");
   }, 1000); 
