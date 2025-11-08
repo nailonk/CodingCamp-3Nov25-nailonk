@@ -49,8 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    output.classList.add("hidden");
-    section.classList.remove("hidden");
+     sessionSection.classList.remove("hidden");
     startSesiBelajar(mapel, jam, menit);
   });
 });
